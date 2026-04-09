@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking — Gentleman's Garage</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-links">
+      <a href="../index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="services.html">SERVICES</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+    <a href="contact.html" class="nav-cta">GET IN TOUCH</a>
+  </nav>
+
+  <!-- Access gate: requires ?key=YOUR_KEY or localStorage gg_booking_key -->
+  <div id="booking-gate" class="page-header" style="min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <h1>BOOKING</h1>
+    <p id="gate-msg" style="margin-bottom:2rem">This page requires activation. Contact the developer for access.</p>
+    <div id="gate-input" style="display:flex;gap:1rem;align-items:center">
+      <input type="text" id="access-key" placeholder="Enter access key" style="padding:0.8rem 1.2rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.15);color:#f0ece4;font-family:'Montserrat',sans-serif;font-size:0.85rem;width:250px">
+      <button onclick="checkKey()" class="btn btn-outline" style="padding:0.8rem 1.5rem">UNLOCK</button>
+    </div>
+  </div>
+
+  <!-- Actual booking content (hidden until unlocked) -->
+  <div id="booking-content" style="display:none">
+    <div class="page-header">
+      <h1>BOOK YOUR EXPERIENCE</h1>
+      <p>Select a service and preferred date to reserve your slot.</p>
+    </div>
+
+    <div class="page-content">
+      <div class="booking-grid">
+        <div class="booking-options">
+          <div class="booking-option" onclick="selectOption(this)">
+            <input type="radio" name="service" value="restoration" hidden>
+            <h3>AI-Enhanced Restoration</h3>
+            <span class="price">FROM €5,000</span>
+            <p>Full diagnostic & restoration consultation with AI analysis.</p>
+          </div>
+          <div class="booking-option" onclick="selectOption(this)">
+            <input type="radio" name="service" value="custom" hidden>
+            <h3>Custom Build Consultation</h3>
+            <span class="price">FROM €2,500</span>
+            <p>Restomod or concours build planning with 3D AI modeling.</p>
+          </div>
+          <div class="booking-option" onclick="selectOption(this)">
+            <input type="radio" name="service" value="winetour" hidden>
+            <h3>Luxury Wine Tour</h3>
+            <span class="price">FROM €800 / PERSON</span>
+            <p>Full-day vineyard tour in a classic car with tastings.</p>
+          </div>
+          <div class="booking-option" onclick="selectOption(this)">
+            <input type="radio" name="service" value="event" hidden>
+            <h3>Private Event</h3>
+            <span class="price">ON REQUEST</span>
+            <p>Exclusive gatherings, corporate events, or private track days.</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="booking-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" required>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <label>Guests</label>
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3-4</option>
+                <option>5-8</option>
+                <option>8+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Notes</label>
+            <textarea placeholder="Special requests, vehicle details, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%">SUBMIT BOOKING REQUEST</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Gentleman's Garage. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /*  DEVELOPER ACTIVATION SYSTEM
+     *  ─────────────────────────────
+     *  Method 1: URL param — booking.html?key=gentleman2026
+     *  Method 2: localStorage — localStorage.setItem('gg_booking_key', 'gentleman2026')
+     *  Method 3: Manual input on the page
+     *
+     *  To change the access key, edit the VALID_KEY below.
+     */
+    const VALID_KEY = 'gentleman2026';
+
+    function unlock() {
+      document.getElementById('booking-gate').style.display = 'none';
+      document.getElementById('booking-content').style.display = 'block';
+      localStorage.setItem('gg_booking_key', VALID_KEY);
+    }
+
+    function checkKey() {
+      const input = document.getElementById('access-key').value.trim();
+      if (input === VALID_KEY) {
+        unlock();
+      } else {
+        document.getElementById('gate-msg').textContent = 'Invalid key. Please try again.';
+        document.getElementById('gate-msg').style.color = '#c44';
+      }
+    }
+
+    function selectOption(el) {
+      document.querySelectorAll('.booking-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      el.querySelector('input[type="radio"]').checked = true;
+    }
+
+    // Auto-check on load
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const urlKey = params.get('key');
+      const storedKey = localStorage.getItem('gg_booking_key');
+      if (urlKey === VALID_KEY || storedKey === VALID_KEY) {
+        unlock();
+      }
+    })();
+  </script>
+</body>
+</html>
