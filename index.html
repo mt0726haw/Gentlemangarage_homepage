@@ -1,9 +1,193 @@
-<div class="vineyard-section">
-    <div class="vineyard-right">
-        <div class="phone-mockup"></div>
-        <video controls loop>
-            <source src="vine_collage.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gentleman's Garage — AI & Classic Cars</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav">
+    <div class="nav-links">
+      <a href="index.html" class="active">HOME</a>
+      <a href="pages/about.html">ABOUT</a>
+      <a href="pages/services.html">SERVICES</a>
+      <a href="pages/gallery.html">GALLERY</a>
+      <a href="pages/contact.html">CONTACT</a>
     </div>
-</div>
+    <a href="pages/contact.html" class="nav-cta">GET IN TOUCH</a>
+  </nav>
+
+  <!-- HERO SECTION with swappable backgrounds -->
+  <section class="hero" id="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image: url('images/garage_oldtimer.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/wine_tour_oldtimer.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/mobile_final_clean.jpg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">GENTLEMAN'S GARAGE</h1>
+      <div class="hero-divider">
+        <span class="line"></span>
+        <span class="hero-subtitle">AI & CLASSIC CARS</span>
+        <span class="line"></span>
+      </div>
+      <h2 class="hero-tagline">Where AI Meets Classic Cars</h2>
+      <p class="hero-desc">Blending cutting-edge AI technology with timeless automotive passion.<br>Experience the future of classic cars.</p>
+      <div class="hero-buttons">
+        <a href="pages/services.html" class="btn btn-outline">OUR SERVICES</a>
+        <a href="pages/about.html" class="btn btn-outline">LEARN MORE</a>
+      </div>
+    </div>
+    <!-- Slide indicators -->
+    <div class="hero-indicators">
+      <button class="indicator active" data-slide="0"></button>
+      <button class="indicator" data-slide="1"></button>
+      <button class="indicator" data-slide="2"></button>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services-preview">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-cogs"></i></div>
+        <h3>AI-Enhanced Restoration</h3>
+        <p>Harness the power of AI to restore and optimize classic cars to perfection.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-car"></i></div>
+        <h3>Custom Builds & Tuning</h3>
+        <p>Merge the beauty of classic design with cutting-edge AI enhancements.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>Exclusive Events & Community</h3>
+        <p>Join a community of classic car enthusiasts and AI innovators.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VINEYARD / SECOND HERO SECTION -->
+  <section class="vineyard-section">
+    <div class="vineyard-bg" style="background-image: url('images/hero-vineyard.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="vineyard-content">
+      <div class="vineyard-left">
+        <h2 class="vineyard-title">SCAN & WATCH<br>VINEYARD TOURS</h2>
+        <p class="vineyard-desc">Explore vineyards virtually with our QR code videos on the finest estates and wineries.</p>
+        <div class="qr-block">
+          <div class="qr-placeholder">
+            <i class="fas fa-qrcode"></i>
+          </div>
+          <a href="#" class="btn btn-outline">SCAN TO WATCH</a>
+        </div>
+      </div>
+      <div class="vineyard-right">
+        <div class="phone-mockup">
+          <i class="fas fa-mobile-screen-button"></i>
+        </div>
+      </div>
+    </div>
+    <div class="vineyard-buttons">
+      <a href="pages/services.html" class="btn btn-outline">OUR SERVICES</a>
+      <a href="pages/about.html" class="btn btn-outline">LEARN MORE</a>
+    </div>
+  </section>
+
+  <!-- WINE SERVICES -->
+  <section class="services-preview wine-services">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-wine-glass"></i></div>
+        <h3>Luxury Wine Tours</h3>
+        <p>Embark on scenic wine tours paired with drives in classic cars.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-car-side"></i></div>
+        <h3>Trunk Cellars & Tastings</h3>
+        <p>Transform your classic car's trunk wine cellar for exclusive tastings.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>Exclusive Events & Community</h3>
+        <p>Join a community that celebrates the finer: vintage cars and fine wines.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section class="about-teaser">
+    <div class="container">
+      <h2>The Art of Automotive Excellence</h2>
+      <p>At Gentleman's Garage, we believe that classic cars deserve the finest care — enhanced by the precision of artificial intelligence. Our team of master craftsmen and AI engineers work together to preserve automotive heritage while pushing the boundaries of what's possible.</p>
+      <a href="pages/about.html" class="btn btn-outline">DISCOVER OUR STORY</a>
+    </div>
+  </section>
+
+  <!-- GALLERY TEASER -->
+  <section class="gallery-teaser">
+    <h2>Our Collection</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="background-image: url('images/wine_event_image2.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('images/hero-vineyard.jpg.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('images/gallery-3.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('images/gallery-4.jpg')"></div>
+    </div>
+    <a href="pages/gallery.html" class="btn btn-outline" style="margin-top:2rem">VIEW FULL GALLERY</a>
+  </section>
+
+  <!-- BOOKING TEASER (hidden by default — developer toggle) -->
+  <section class="booking-section" id="booking-section" style="display:none;">
+    <div class="container">
+      <h2>Book Your Experience</h2>
+      <p>Reserve your exclusive classic car experience or vineyard tour.</p>
+      <a href="pages/booking.html" class="btn btn-gold">BOOK NOW</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Gentleman's Garage</h3>
+        <p>Where AI meets timeless automotive passion.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/services.html">Services</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="pages/services.html">AI Restoration</a>
+        <a href="pages/services.html">Custom Builds</a>
+        <a href="pages/services.html">Wine Tours</a>
+        <a href="pages/services.html">Events</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Gentleman's Garage. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
