@@ -2,6 +2,8 @@
 
 A luxury static website for a classic car restoration & wine tour business.
 
+Homepagepreview:https://mt0726haw.github.io/Gentlemangarage_homepage/
+
 ## Quick Start
 
 Open `index.html` in a browser — no build step needed.
